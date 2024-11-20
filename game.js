@@ -1,3 +1,6 @@
+function setup(){
+    createCanvas(600,500);
+}
 let x=260;
 let y=0;
 let r=0;
@@ -10,9 +13,7 @@ let velocity=0;
 let flight=-1.5;
 let platform=375;
 let state="start";
-function setup(){
-    createCanvas(800,600);
-}
+
 function backgroundimage(){
 background(0,150,230);
 
