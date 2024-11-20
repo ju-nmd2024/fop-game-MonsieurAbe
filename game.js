@@ -1,4 +1,4 @@
-let x   =260;
+let x=260;
 let y=0;
 let r=0;
 let bpx=x-150;
@@ -87,16 +87,21 @@ background(0,150,230);
     triangle(600,380,590,400,610,400);
     rect(0,400,700,200);
 }
-function fly(){
+function fly()
+//controlls
+{
     if (keyIsDown(32)){
         velocity+=flight;
     }
+    //making the chopper descend
     gravity+=0.00005;
     velocity+=gravity;
     y+=velocity;
+    //stops the chopper once it reaches the platform
     if (y>platform){
         y=platform;
     }
+    //keeps the rotate function consistant
     if(y<platform){
         bpy+=velocity;
         fpy+=velocity;
@@ -128,7 +133,7 @@ function gamescreen(){
     rect(10,410,700,200);
     fill(0,80,80);
     rect(150,340,200,6);
-
+ //sending you to the lose or win screens
     if(y>=platform){
     if(velocity>5){
         state="lose";
@@ -272,6 +277,7 @@ function Character(x,y){
 }
 
 function draw(){
+  //switching between different states
     backgroundimage();
     if (state==="start") {
         startscreen();
@@ -284,7 +290,7 @@ function draw(){
         losescreen();
       }
     }
-    
+    //button to start or restart the game
     function mouseClicked() {
       if (state==="start") {
         if (mouseX>200 && mouseX<400 && mouseY>100 && mouseY<180) {
@@ -313,3 +319,4 @@ function draw(){
     
     
 }
+
