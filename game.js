@@ -10,9 +10,6 @@ let velocity=0;
 let flight=-1.5;
 let platform=375;
 let state="start";
-function setup(){
-  createCanvas(510,500);
-}
 function backgroundimage(){
 background(0,150,230);
 
